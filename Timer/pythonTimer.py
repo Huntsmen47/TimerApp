@@ -26,7 +26,7 @@ def start_timer():
     countdown_timer(total)
     print("Timer finished!")
     pygame.mixer.init()
-    pygame.mixer.music.load("/home/hunter/Desktop/Timer/beep.mp3")  # Replace "beep.wav" with your own sound file
+    pygame.mixer.music.load("Documents/TimerApp/Timer/beep.mp3")
     pygame.mixer.music.play()
 
 # Main program loop
