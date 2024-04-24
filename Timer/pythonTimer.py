@@ -23,7 +23,10 @@ def start_timer():
     hour_sec = 3600*hours
     min_sec = 60*mins
     total = min_sec + seconds + hour_sec
-    countdown_timer(total)
+    try:
+    	countdown_timer(total)
+    except KeyboardInterrupt:
+    	print(f"You started with {hours} hours, {mins} mins, and {seconds} seconds.")
     print("Timer finished!")
     pygame.mixer.init()
     pygame.mixer.music.load("Documents/TimerApp/Timer/beep.mp3")
