@@ -1,5 +1,6 @@
 import time
 import pygame
+import os,sys
 
 def countdown_timer(seconds):
     while seconds > 0:
@@ -17,6 +18,7 @@ def countdown_timer(seconds):
 	    seconds -= 1
 
 def start_timer():
+    APP_FOLDER = os.path.dirname(os.path.realpath(sys.argv[0]))
     hours = int(input("Enter hours: ")) 
     mins = int(input("Enter minutes: "))
     seconds = int(input("Enter seconds: "))
@@ -29,7 +31,8 @@ def start_timer():
     	print(f"You started with {hours} hours, {mins} mins, and {seconds} seconds.")
     print("Timer finished!")
     pygame.mixer.init()
-    pygame.mixer.music.load("Documents/TimerApp/Timer/beep.mp3")
+    os.chdir(APP_FOLDER)
+    pygame.mixer.music.load("beep.mp3")
     pygame.mixer.music.play()
 
 # Main program loop
