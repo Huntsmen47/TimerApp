@@ -19,9 +19,25 @@ def countdown_timer(seconds):
 
 def start_timer():
     APP_FOLDER = os.path.dirname(os.path.realpath(sys.argv[0]))
-    hours = int(input("Enter hours: ")) 
-    mins = int(input("Enter minutes: "))
-    seconds = int(input("Enter seconds: "))
+    hours = input("Enter hours: ")
+    mins = input("Enter minutes: ")
+    seconds = input("Enter seconds: ")
+
+    # allow for empty string and ensure vals are converted to ints
+    if hours == "":
+        hours = 0
+    else:
+        hours = int(hours)
+    if mins == "":
+        mins = 0
+    else:
+        mins = int(mins)
+    if seconds == "":
+        seconds = 0
+    else:
+        seconds = int(seconds)
+    #######
+
     hour_sec = 3600*hours
     min_sec = 60*mins
     total = min_sec + seconds + hour_sec
